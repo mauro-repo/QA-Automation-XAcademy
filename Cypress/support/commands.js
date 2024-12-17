@@ -42,8 +42,8 @@ Cypress.Commands.add('login', (username, password) => {
   });
   
   Cypress.Commands.add('checkout', () => {
-    cy.get('.btn_action').click(); //Haga click en el botón de pago y verifique los pasos
-    cy.get('[data-test="firstName"]').type('Juan'); //Rellene el nombre, el apellido y el código postal
+    cy.get('.btn_action').click();
+    cy.get('[data-test="firstName"]').type('Juan');
     cy.wait(500);
     cy.get('[data-test="lastName"]').type('Perez');
     cy.wait(500);
