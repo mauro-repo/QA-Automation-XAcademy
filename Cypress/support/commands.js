@@ -34,8 +34,9 @@ Cypress.Commands.add('login', (username, password) => {
   });
   
   Cypress.Commands.add('addToCart', () => {
-    cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').should('exist');
-    cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
+    cy.get('.inventory_item').each(($el) => {
+      cy.wrap($el).find('button').click();
+    });
     cy.get('[data-test="shopping-cart-badge"]').click();
     cy.get('.item_pricebar > .btn_secondary').should('exist');
     cy.wait(500)
